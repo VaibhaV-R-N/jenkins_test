@@ -30,7 +30,11 @@ pipeline{
         }
 
         stage("run"){
-
+            when{
+                expression{
+                    params.name == "vaibhav"
+                }
+            }
             steps{
                gv.run()
             }
