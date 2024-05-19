@@ -24,7 +24,7 @@ pipeline{
 
             steps{
                 script{
-                    gv.build()
+                    gv.buildCode()
                 }   
             }
         }
@@ -37,7 +37,7 @@ pipeline{
             }
             steps{
                 script{
-                    gv.run()
+                    gv.runCode()
                 }
             
             }

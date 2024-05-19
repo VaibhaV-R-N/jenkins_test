@@ -1,4 +1,4 @@
-def build (){
+def buildCode (){
 
     if(params.name == "vaibhav"){
 
@@ -15,7 +15,7 @@ def build (){
 
 }
 
-def run(){
+def runCode(){
 
     if(params.runtest){
          echo "Running executable.."
