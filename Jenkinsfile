@@ -1,7 +1,11 @@
 pipeline{
 
     agent any
-
+    parameters{
+        choice(name:"version",choices:["1","3","2"],description:"version to build")
+        String(name:"name")
+        booleanParam(name:"run test",default:false,description:"run test")
+    }
     stages{
         
         stage("build"){
