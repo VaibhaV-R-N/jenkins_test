@@ -1,32 +1,38 @@
+def gv
+
 pipeline{
 
     agent any
     parameters{
         choice(name:"version",choices:["1","3","2"],description:"version to build")
         string(name:"name")
-        booleanParam(name:"run test",defaultValue:false,description:"run test")
+        booleanParam(name:"runtest",defaultValue:false,description:"run test")
     }
     stages{
-        
+        stage("init"){
+
+            steps{
+                script{
+                    gv = load "script.groovy" 
+                }
+                  
+
+            }
+
+        }
         stage("build"){
 
             steps{
-                echo "Starting build.."
-
-                sh "gcc main.c -o main"
-
-                echo "Build finished"   
+                scrip{
+                    gv.build()
+                }   
             }
         }
 
         stage("run"){
 
             steps{
-                echo "Running executable.."
-
-                sh "./main"
-
-                echo "Process ended.."
+               gv.run()
             }
 
             
