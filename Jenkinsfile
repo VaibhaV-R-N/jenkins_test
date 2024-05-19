@@ -8,20 +8,26 @@ pipeline{
         
         stage("build"){
 
-            echo "Starting build.."
+            steps{
+                echo "Starting build.."
 
-            sh "gcc main.c -o main"
+                sh "gcc main.c -o main"
 
-            echo "Build finished"
+                echo "Build finished"   
+            }
         }
 
         stage("run"){
 
-            echo "Running executable.."
+            steps{
+                echo "Running executable.."
 
-            sh "./main"
+                sh "./main"
 
-            echo "Process ended.."
+                echo "Process ended.."
+            }
+
+            
         }
     }
 
