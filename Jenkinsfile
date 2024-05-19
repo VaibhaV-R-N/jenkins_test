@@ -23,7 +23,7 @@ pipeline{
         stage("build"){
 
             steps{
-                scrip{
+                script{
                     gv.build()
                 }   
             }
@@ -36,7 +36,10 @@ pipeline{
                 }
             }
             steps{
-               gv.run()
+                script{
+                    gv.run()
+                }
+            
             }
 
             
